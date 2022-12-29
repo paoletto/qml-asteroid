@@ -22,6 +22,9 @@ import org.asteroid.controls 1.0
 Item {
     property bool checked
     signal pressed(var mouse)
+    signal released(var mouse)
+    signal pressAndHold(var mouse)
+
 
     width: Dims.l(30)
     height: width
@@ -44,5 +47,7 @@ Item {
         anchors.fill: parent
         onClicked: checked = !checked
         onPressed: parent.pressed(mouse)
+        onReleased: parent.released(mouse)
+        onPressAndHold: parent.pressAndHold(mouse)
     }
 }
