@@ -21,6 +21,7 @@ import org.asteroid.controls 1.0
 
 Item {
     property bool checked
+    signal pressed(var mouse)
 
     width: Dims.l(30)
     height: width
@@ -42,5 +43,6 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: checked = !checked
+        onPressed: parent.pressed(mouse)
     }
 }
